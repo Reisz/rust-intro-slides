@@ -2,10 +2,23 @@ cmake_minimum_required(VERSION 2.8.12)
 
 project(RustIntroSlides NONE)
 
+# Imports
 include(${CMAKE_CURRENT_LIST_DIR}/deps/UseLATEX/UseLATEX.cmake)
 
+# Config
 set(PDFLATEX_COMPILER lualatex)
 
-add_latex_document(
-  slides.tex INPUTS defs.tex frames/01-basic-information/02-principles.tex
-  frames/01-basic-information/03-target-domains.tex)
+# Frames
+set(SECTIONS "01-basic-information")
+set(FRAMES_01-basic-information "02-principles" "03-target-domains")
+
+# Inputs
+set(INPUTS defs.tex)
+foreach(SECTION IN LISTS SECTIONS)
+    foreach(FRAME IN LISTS FRAMES_${SECTION})
+        list(APPEND INPUTS frames/${SECTION}/${FRAME}.tex)
+    endforeach()
+endforeach()
+
+# Targets
+add_latex_document(slides.tex INPUTS ${INPUTS})
