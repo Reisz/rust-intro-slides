@@ -5,6 +5,9 @@
 \usepackage{booktabs}
 \usepackage{luacode}
 \usepackage{microtype}
+\usepackage{tikz}
+
+\usetikzlibrary{positioning}
 
 \title{Introduction to Rust}
 \author{Daniel Pfaff}
@@ -31,7 +34,8 @@
 % - Dropbox
 
 \section{Language Intro}%
-% Arithmetic types (int, float, bool)
+\input{frames/02-language-intro/01-integer-types}
+% Other types
 % Arrays, Slices
 % Strings (char, str, String)
 % Structs, Tuples
@@ -49,7 +53,8 @@
 % Standard Library
 % - Methods on primitives
 % - Iterators
-% - Result / Option
+% - Into / TryInto
+% - Result / Option / Try
 % - Formatting
 % - Collections
 % - Smart Pointers

@@ -1,6 +1,6 @@
 % Fix overfull vbox warning from metropolis theme
 \def\titlepage{%
-    \usebeamertemplate{title page}%
+	\usebeamertemplate{title page}%
 }
 
 % Colors <https://personal.sron.nl/~pault/>
@@ -12,3 +12,17 @@
 \definecolor{tolBrightPurple}{HTML}{AA3377}
 \definecolor{tolBrightGrey}{HTML}{BBBBBB}
 
+% Tikz
+\tikzset{
+	joinable/.style = {
+			inner xsep = 0,
+			text height = #1, text depth = .25ex,
+		},
+	joinable/.default = 1.5em,
+	boxed/.style = {
+			draw = #1, very thick,
+			fill = #1, fill opacity = 0.5,
+			text opacity = 1,
+			rounded corners = 1pt,
+		},
+}

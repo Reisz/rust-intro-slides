@@ -1,0 +1,42 @@
+\begin{luacode*}
+	function sizeList()
+		local list = {8, 16, 32, 64, 128}
+
+		for i, v in ipairs(list) do
+			list[i] = ([[\texttt{%d}]]):format(v)
+		end
+
+		tex.sprint(table.concat(list, ", "))
+	end
+\end{luacode*}
+
+\begin{frame}{Integer Types}%
+	\centering%
+	\begin{tikzpicture}[remember picture, overlay]
+		\node[boxed = tolBrightBlue, joinable = 1.85em] (kind) at ([yshift = -2.2cm, xshift = -1cm] current page.north) {\texttt{\Huge i}};
+		\node[boxed = tolBrightRed, joinable = 1.85em, base right = 0 of kind] (width) {\texttt{\Huge 32}};
+
+		\node[boxed = tolBrightBlue, align = left, left = of kind] (kind-text) {\large \texttt{i} Signed\\\texttt{u} Unsigned};
+		\node[boxed = tolBrightRed, align = left, right = of width] (width-text) {\large \directlua{sizeList()}\\\texttt{size} \textit{(of pointers)}};
+	\end{tikzpicture}%
+
+	\vspace{1cm}%
+
+	\begin{columns}[T]%
+		\column{0.49\textwidth}%
+		\textbf{\large Literals}\\
+		\begin{itemize}
+			\item Decimal, \texttt{0b}, \texttt{0o}, \texttt{0x}
+			\item Separator: \texttt{\_}\quad\textit{\footnotesize (ignored)}
+			\item Optional type suffix\quad\textit{\footnotesize (rare)}
+		\end{itemize}%
+
+		\column{0.49\textwidth}%
+		\textbf{\large Overflow Handling}\\
+		\begin{itemize}
+			\item Wrapping\quad\textit{\footnotesize (default)}
+			\item Saturating
+			\item Checked / Overflowing
+		\end{itemize}%
+	\end{columns}%
+\end{frame}
