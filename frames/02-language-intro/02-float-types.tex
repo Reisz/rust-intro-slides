@@ -1,0 +1,32 @@
+\begin{frame}{Floating-point Types}%
+	\centering%
+	\begin{tikzpicture}[remember picture, overlay]
+		\node[boxed = tolBrightBlue, joinable = 1.85em] (kind) at ([yshift = -2.2cm, xshift = -1cm] current page.north) {\texttt{\Huge f}};
+		\node[boxed = tolBrightRed, joinable = 1.85em, base right = 0 of kind] (width) {\texttt{\Huge 32}};
+
+		\node[boxed = tolBrightBlue, align = left, left = of kind] (kind-text) {\large \texttt{f} Float};
+		\node[boxed = tolBrightRed, align = left, right = of width] (width-text) {\large \texttt{32}, \texttt{64}};
+	\end{tikzpicture}%
+
+	\vspace{1cm}%
+
+	\begin{columns}[T]%
+		\column{0.49\textwidth}%
+		\textbf{\large Literals}\\
+		\begin{itemize}
+			\item Decimal
+			\item Optional exponent
+			\item Separator: \texttt{\_}\quad\textit{\footnotesize (ignored)}
+			\item Optional type suffix\quad\textit{\footnotesize (rare)}
+		\end{itemize}%
+
+		\column{0.49\textwidth}%
+		\textbf{\large More Info}\\
+		\begin{itemize}
+			\item IEEE 754--2008
+			\item Algebra methods
+			\item Trigonometry methods
+			\item Constants (\(e\), \(\pi\), \(\frac{\pi}{2}\), \dots)
+		\end{itemize}%
+	\end{columns}%
+\end{frame}
