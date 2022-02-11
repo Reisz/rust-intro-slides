@@ -1,0 +1,23 @@
+\begin{frame}{Strings}%
+	\begin{columns}[T]%
+		\column{0.499\textwidth}%
+		\texttt{\Large char}%
+
+		\begin{itemize}
+			\item Unicode scalar value
+			\item 32-bit width
+			\item \texttt{'\textbackslash{}x7F'}, \texttt{'\textbackslash{}u\{12EF\}'}
+			\item Unicode \& ASCII API
+		\end{itemize}%
+
+		\column{0.499\textwidth}%
+		{\Large \texttt{\&str} / \texttt{String}}%
+
+		\begin{itemize}
+			\item View / Resizable Container
+			\item UTF-8\hfil\textit{\footnotesize (runtime validated)}
+			\item Raw literal \texttt{r\#""\textbackslash{}"\#} \textrightarrow{} \texttt{"\textbackslash{}} % chktex 18
+			\item Standard string API
+		\end{itemize}%
+	\end{columns}%
+\end{frame}

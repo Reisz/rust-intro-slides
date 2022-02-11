@@ -11,7 +11,7 @@ set(PDFLATEX_COMPILER lualatex)
 # Frames
 set(SECTIONS "01-basic-information" "02-language-intro")
 set(FRAMES_01-basic-information "02-principles" "03-target-domains")
-set(FRAMES_02-language-intro "01-integer-types" "02-float-types")
+set(FRAMES_02-language-intro "01-integer-types" "02-float-types" "03-strings")
 
 # Inputs
 set(INPUTS defs.tex)
